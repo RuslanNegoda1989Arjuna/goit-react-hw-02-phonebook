@@ -1,14 +1,18 @@
 import { render } from '@testing-library/react';
 import React, { Component } from 'react';
-import { MainTitle } from './App.styled';
+import { Title } from './App.styled';
 
 export class App extends Component {
-  state = { contacts: [], name: '' };
+  state = {
+    contacts: [],
+    name: '',
+  };
 
   render() {
+    const { contacts, name } = this.state;
     return (
       <div>
-        <MainTitle>PhoneBook</MainTitle>
+        <Title>PhoneBook</Title>
       </div>
     );
   }
