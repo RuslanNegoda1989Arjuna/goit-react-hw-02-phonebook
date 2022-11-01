@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import React, { Component } from 'react';
-import { Title } from './App.styled';
+import { PhonebookContainer, Title } from './App.styled';
 import { PhonebookForm } from './PhonebookForm/PhonebookForm';
 
 export class App extends Component {
@@ -14,7 +14,9 @@ export class App extends Component {
     return (
       <div>
         <Title>PhoneBook</Title>
-        <PhonebookForm />
+        <PhonebookContainer>
+          <PhonebookForm />
+        </PhonebookContainer>
       </div>
     );
   }

@@ -1,19 +1,35 @@
+import { Formik, Form, Field } from 'formik';
+import { Button, FormUs, Input, LabelIn } from './PhonebookForm.styled';
+
+const initialValues = {
+  name: '',
+  number: '',
+};
+
 export const PhonebookForm = () => {
-  const userSubmit = e => {
-    e.preventDefault();
-    console.log(e.target);
+  // const userSubmit = e => {
+  //   e.preventDefault();
+  //   const { name, number } = e.target;
+  // };
+
+  const userSubmit = (values, { resetForm }) => {
+    console.log(values);
+    // console.log(actions);
+    resetForm();
   };
   return (
-    <form autoComplete="off" onSubmit={userSubmit}>
-      <label htmlFor="">
-        Name
-        <input type="text" name="name" />
-      </label>
-      <label htmlFor="">
-        Number
-        <input type="text" name="number" />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+    <Formik initialValues={initialValues} onSubmit={userSubmit}>
+      <FormUs>
+        <LabelIn htmlFor="">
+          Name
+          <Input type="text" name="name" />
+        </LabelIn>
+        <LabelIn htmlFor="">
+          Number
+          <Input type="text" name="number" />
+        </LabelIn>
+        <Button type="submit">Submit</Button>
+      </FormUs>
+    </Formik>
   );
 };
