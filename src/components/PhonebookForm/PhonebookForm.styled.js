@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik';
+import { Form, Field } from 'formik';
 import styled from '@emotion/styled';
 
 export const Input = styled(Field)`
@@ -26,4 +26,12 @@ export const LabelIn = styled.label`
 export const Button = styled.button`
   width: 200px;
   padding: 10px;
+
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    background-color: rgba(255, 183, 48, 1);
+    scale: 1.02;
+  }
 `;
