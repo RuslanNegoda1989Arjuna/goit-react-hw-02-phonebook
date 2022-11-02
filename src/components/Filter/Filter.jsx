@@ -12,7 +12,7 @@ export const Filter = ({ filter, onChange }) => {
   );
 };
 
-Filter.protoType = {
-  value: PropTypes.string,
+Event.propTypes = {
+  filter: PropTypes.string,
   onChange: PropTypes.func,
 };

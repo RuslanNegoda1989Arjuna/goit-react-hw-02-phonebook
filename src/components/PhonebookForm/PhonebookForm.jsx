@@ -1,5 +1,4 @@
-// import * as yup from 'yup';
-
+import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { Button, FormUs, Input, LabelIn } from './PhonebookForm.styled';
 
@@ -42,4 +41,8 @@ export const PhonebookForm = ({ onSubmit }) => {
       </Formik>
     </>
   );
+};
+
+Event.propTypes = {
+  onSubmit: PropTypes.func,
 };

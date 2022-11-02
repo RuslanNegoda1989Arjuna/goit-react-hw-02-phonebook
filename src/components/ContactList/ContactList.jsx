@@ -1,4 +1,5 @@
 import { BtnDelete, ContactIt, Item, ListBox } from './ContactList.styled';
+import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, onDelete }) => {
   return (
@@ -19,4 +20,16 @@ export const ContactList = ({ contacts, onDelete }) => {
       </ul>
     </ListBox>
   );
+};
+
+Event.propTypes = {
+  contact: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      number: PropTypes.number,
+    })
+  ),
+
+  onDelete: PropTypes.func,
 };
